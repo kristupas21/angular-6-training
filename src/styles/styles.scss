@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+@import './base/variables';
+@import './app/app.component';
+@import './app/heroes/heroes';
+@import './app/hero-details/hero-details';
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
