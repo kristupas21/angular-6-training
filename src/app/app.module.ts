@@ -19,10 +19,11 @@ import { DisplayContainerComponent } from './components/display-container/displa
 import { IconNotificationComponent } from './common/icons/icon-notification/icon-notification.component';
 import { IconUserComponent } from './common/icons/icon-user/icon-user.component';
 import { IconChevronRightComponent } from './common/icons/icon-chevron-right/icon-chevron-right.component';
-// Reducers
-import { sideNavReducer } from './reducers';
 import { NavigationComponent } from './components/nav-container/navigation/navigation.component';
 import { NavLinkComponent } from './components/nav-container/navigation/nav-link/nav-link.component';
+// Reducers
+import { sideNavReducer, selectedNameReducer } from './reducers';
+
 
 
 @NgModule({
@@ -46,7 +47,10 @@ import { NavLinkComponent } from './components/nav-container/navigation/nav-link
     MatSelectModule,
     MatSidenavModule,
     MatIconModule,
-    StoreModule.forRoot({ sideNavOpened: sideNavReducer })
+    StoreModule.forRoot({ 
+      sideNavOpened: sideNavReducer,
+      selectedUser: selectedNameReducer 
+    })
   ],
   exports: [
     MatButtonModule,

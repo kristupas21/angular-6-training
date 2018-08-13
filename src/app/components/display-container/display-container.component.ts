@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { AppState } from '../../interfaces/app-state';
 
 
 @Component({
@@ -6,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './display-container.component.html',
 })
 export class DisplayContainerComponent implements OnInit {
+  selectedName: Observable<string>;
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { 
+    this.selectedName = store.pipe(select('selectedUser'));
+  }
 
   ngOnInit() {
+    
   }
 
 }

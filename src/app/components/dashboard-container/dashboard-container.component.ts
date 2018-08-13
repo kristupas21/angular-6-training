@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from "../../interfaces/app-state";
 import { Name } from '../../interfaces/names';
 import { Names } from "../../data/names";
+import { ToggleSidenav, SelectUser } from '../../actions';
 
 @Component({
   selector: 'app-dashboard-container',
@@ -18,6 +19,10 @@ export class DashboardContainerComponent implements OnInit {
   }
 
   toggleSideNav(): void {
-    this.store.dispatch({ type: 'TOGGLE_SIDENAV'});
+    this.store.dispatch(new ToggleSidenav);
+  }
+
+  onChange(value: string) {
+    this.store.dispatch(new SelectUser(value));
   }
 }

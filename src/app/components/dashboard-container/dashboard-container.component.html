@@ -2,7 +2,7 @@
   <app-icon-notification class="icon icon--link" (click)="toggleSideNav()"></app-icon-notification>
   <app-icon-user class="icon"></app-icon-user>
   <mat-form-field>
-    <mat-select [(value)]="selectedName.value">
+    <mat-select [(value)]="selectedName.value" (selectionChange)="onChange($event.value)">
       <mat-option *ngFor="let name of names" [value]="name.value">
         {{name.viewValue}}
       </mat-option>
