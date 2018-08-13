@@ -8,22 +8,21 @@ app-nav-container {
 
 .mat-drawer {
   background-color: $color-primary;
-  position: fixed;
   height: 100%;
   min-width: 240px;
+  position: fixed;
   width: 240px;
 }
 
-
 [app-nav-link] {
   background: transparent;
+  color: $white;
   display: block;
-  color: white;
   height: 40px;
   line-height: 40px;
   transition: background .2s ease-in-out;
 
   &[ng-reflect-is-selected=true] {
-    background: #003d1b;
+    background: $green-dark;
   }
 }

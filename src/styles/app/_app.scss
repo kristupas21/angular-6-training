@@ -1,6 +1,6 @@
 .app-root {
   @include flex-container($justify: flex-start, $align: flex-start);
-  border: 6px solid rgba(0,0,0,.2);
+  border: 6px solid $black-transparent-02;
   box-sizing: border-box;
   height: 100vh;
   width: 100vw;
@@ -8,7 +8,7 @@
 
 .main-content {
   @include flex-container($justify: flex-start, $align: flex-start, $direction: column);
+  background: $ivory;
   flex: 1 100%;
   height: 100%;
-  background: ivory;
 }

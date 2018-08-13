@@ -1,6 +1,6 @@
 app-dashboard-container {
   @include flex-container($justify: flex-end);
-  background: #ffffff;
+  background: $white;
   box-sizing: border-box;
   height: 80px;
   padding-right: 10px;
