@@ -11,8 +11,13 @@ body {
 
 .icon {
   display: inline-block;
+
+  &--link {
+    cursor: pointer;
+  }
 }
 
 .mat-form-field {
   font-size: 14px;
 }
+

@@ -1,0 +1,10 @@
+<ul>
+  <li
+    app-nav-link
+    *ngFor="let link of navigationLinks"
+    [name]="link | titlecase"
+    (mouseenter)="onMouseEnter(link)"
+    (mouseleave)="onMouseLeave(link)"
+    [isSelected]="link === selectedLink">
+  </li>
+</ul>

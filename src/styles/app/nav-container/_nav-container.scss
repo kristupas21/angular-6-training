@@ -13,3 +13,17 @@ app-nav-container {
   min-width: 240px;
   width: 240px;
 }
+
+
+[app-nav-link] {
+  background: transparent;
+  display: block;
+  color: white;
+  height: 40px;
+  line-height: 40px;
+  transition: background .2s ease-in-out;
+
+  &[ng-reflect-is-selected=true] {
+    background: #003d1b;
+  }
+}
