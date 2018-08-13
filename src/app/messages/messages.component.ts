@@ -1,18 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html'
 })
-export class MessagesComponent implements OnInit {
+export class MessagesComponent implements OnChanges, OnInit {
+  @Input() message: string;
 
   constructor(public messageService: MessageService) {
-    
+
   }
 
   ngOnInit() {
-    console.log(this.messageService);
+
   }
 
+  ngOnChanges(changes): void {
+    console.log(changes);
+  }
 }

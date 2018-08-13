@@ -9,9 +9,9 @@ import { Hero } from '../hero';
 export class HeroesComponent implements OnInit {
   heroes: Array<Hero>;
   selectedHero: Hero;
- 
+
   constructor(private heroService: HeroService) {
-    
+
   }
 
   ngOnInit() {
@@ -27,5 +27,7 @@ export class HeroesComponent implements OnInit {
     this.selectedHero = hero;
   }
 
-
+  onMouseOver(hero: Hero): void {
+    hero.name !== 'Celeritas' && console.log(hero.name);
+  }
 }
