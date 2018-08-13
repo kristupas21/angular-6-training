@@ -1,0 +1,13 @@
+app-dashboard-container {
+  @include flex-container($justify: flex-end);
+  background: #ffffff;
+  box-sizing: border-box;
+  height: 80px;
+  padding-right: 10px;
+  width: 100%;
+}
+
+.dashboard-container {
+  @include flex-container($justify: space-between);
+  width: 240px;
+}

@@ -1,10 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import './base/reset';
 @import './base/variables';
-@import './app/app.component';
-@import './app/heroes/heroes';
-@import './app/hero-details/hero-details';
+@import './base/mixins';
 @import './my-theme/my-theme';
+@import './app/index';
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.icon {
+  display: inline-block;
+}
+
+.mat-form-field {
+  font-size: 14px;
 }

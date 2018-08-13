@@ -1,9 +1,5 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<h1>{{title}}</h1>
-<button mat-fab color="primary" (click)="messageService.changeMessage()">Change</button>
-<nav>
-  <a routerLink="/heroes">Heroes</a>
-</nav>
-<mat-checkbox>Check me</mat-checkbox>
-<router-outlet></router-outlet>
-<app-messages [message]="messageService.message"></app-messages>
+<app-nav-container></app-nav-container>
+<div class="main-content">
+  <app-dashboard-container></app-dashboard-container>
+  <app-display-container></app-display-container>
+</div>
