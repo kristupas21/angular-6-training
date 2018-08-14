@@ -2,6 +2,7 @@
 @import './base/reset';
 @import './base/variables';
 @import './base/mixins';
+@import './base/sprites';
 @import './my-theme/my-theme';
 @import './app/index';
 
@@ -11,6 +12,12 @@ body {
 
 .icon {
   display: inline-block;
+  opacity: 1;
+  transition: opacity .2s ease-in-out;
+
+  &--hidden {
+    opacity: 0;
+  }
 
   &--link {
     cursor: pointer;

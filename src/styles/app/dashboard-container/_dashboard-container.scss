@@ -2,7 +2,7 @@ app-dashboard-container {
   @include flex-container($justify: flex-end);
   background: $white;
   box-sizing: border-box;
-  height: 80px;
+  min-height: 80px;
   padding-right: 10px;
   width: 100%;
 }

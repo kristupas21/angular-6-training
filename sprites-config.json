@@ -1,0 +1,17 @@
+{
+  "dest": ".",
+  "mode": {
+    "css": {
+      "dest": "src",
+      "prefix": ".svg__%s",
+      "dimensions": "--size",
+      "sprite": "assets/svg-sprite.svg",
+      "bust": false,
+      "render": {
+        "scss": {
+          "dest": "styles/base/_sprites.scss"
+        }
+      }
+    }
+  }
+}

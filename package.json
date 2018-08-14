@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "sass-lint": "sass-lint -c sass-lint.yml src/**/*.scss -v -q"
+    "sass-lint": "sass-lint -c sass-lint.yml src/**/*.scss -v -q",
+    "sprites": "svg-sprite --config sprites-config.json src/assets/icons/*.svg"
   },
   "private": true,
   "dependencies": {

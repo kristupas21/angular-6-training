@@ -14,15 +14,30 @@ app-nav-container {
   width: 240px;
 }
 
+.navigation {
+  margin-top: 80px;
+}
+
 [app-nav-link] {
+  @include flex-container($justify: flex-start);
   background: transparent;
   color: $white;
-  display: block;
-  height: 40px;
-  line-height: 40px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 8px;
   transition: background .2s ease-in-out;
 
   &[ng-reflect-is-selected=true] {
     background: $green-dark;
+  }
+}
+
+.nav-link {
+
+  &__text {
+    min-width: 120px;
   }
 }
