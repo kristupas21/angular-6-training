@@ -3,3 +3,36 @@ app-display-container {
   height: 100%;
   width: 100%;
 }
+
+.display-item {
+  box-sizing: border-box;
+  padding: 20px;
+
+  &__title {
+    color: $color-link;
+    font-size: 13px;
+  }
+
+  &__heading {
+    font-weight: 300;
+    margin: 15px 0;
+  }
+
+  &__controls {
+    @include flex-container($justify: space-between);
+    margin-top: 28px;
+    width: 276px;
+
+    .mat-flat-button {
+      color: $grey-ea;
+      font-weight: 500;
+      height: 32px;
+      line-height: 1;
+
+      &:hover,
+      &:active {
+        color: $white;
+      }
+    }
+  }
+}

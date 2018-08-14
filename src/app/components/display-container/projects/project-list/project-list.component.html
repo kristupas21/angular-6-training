@@ -1,0 +1,24 @@
+<table mat-table [dataSource]="dataSource" matSort class="project-list">
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="project-list__header"> Name </th>
+    <td mat-cell *matCellDef="let element"><a class="project-list__link"> {{element.name | titlecase}} </a></td>
+  </ng-container>
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="project-list__header"> Description </th>
+    <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+  </ng-container>
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="project-list__header"> Status </th>
+    <td mat-cell *matCellDef="let element"> {{element.status}} </td>
+  </ng-container>
+  <ng-container matColumnDef="createdOn">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="project-list__header"> Created On </th>
+    <td mat-cell *matCellDef="let element"> {{element.createdOn}} </td>
+  </ng-container>
+  <ng-container matColumnDef="closedOn">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header class="project-list__header"> Closed On </th>
+    <td mat-cell *matCellDef="let element"> {{element.closedOn}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

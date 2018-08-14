@@ -17,6 +17,7 @@ files:
   include: 'src/**/*.scss'
   ignore:
     - 'src/styles/base/_reset.scss'
+    - 'src/styles/base/_sprites.scss'
 options:
   formatter: stylish
   merge-default-rules: false

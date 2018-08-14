@@ -10,6 +10,15 @@ body {
   font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+h1 {
+  font-size: 32px;
+}
+
+button,
+[mat-flat-button] {
+  font-size: 13px;
+}
+
 .icon {
   display: inline-block;
   opacity: 1;
@@ -28,3 +37,9 @@ body {
   font-size: 14px;
 }
 
+.main-logo {
+  bottom: 15px;
+  position: fixed;
+  right: 15px;
+  width: 140px;
+}

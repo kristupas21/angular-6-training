@@ -5,8 +5,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './projects.component.html'
 })
 export class ProjectsComponent implements OnInit {
+  public title = 'projects';
+  public heading = 'active projects';
+  public button = {
+    newTemplate: 'new template',
+    startTemplate: 'start template'
+  };
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

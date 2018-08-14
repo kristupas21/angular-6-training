@@ -6,14 +6,17 @@ app-nav-container {
   height: 100%;
 }
 
+// sass-lint:disable no-important
 .mat-drawer {
   background-color: $color-primary;
   height: 100%;
   min-width: 200px;
+  overflow-y: hidden !important;
   position: fixed;
   width: 200px;
 }
 
+// sass-lint:enable no-important
 .navigation {
   margin-top: 80px;
 }

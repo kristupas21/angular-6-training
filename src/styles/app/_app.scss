@@ -1,8 +1,9 @@
 .app-root {
   @include flex-container($justify: flex-start, $align: flex-start);
-  border: 6px solid $black-transparent-02;
   box-sizing: border-box;
   height: 100vh;
+  margin: 0 auto;
+  min-width: 1280px;
   width: 100vw;
 }
 
