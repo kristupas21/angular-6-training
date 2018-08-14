@@ -8,6 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class NavLinkComponent implements OnInit {
   @Input() name: string;
   @Input() isSelected: boolean;
+  @Input() isActive: boolean;
 
   constructor() { }
 

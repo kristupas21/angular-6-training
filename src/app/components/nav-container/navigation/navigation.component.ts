@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationLink } from "../../../interfaces/navigation-link";
 import { NavigationLinks } from "../../../data/navigation";
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-navigation',
@@ -9,8 +12,15 @@ import { NavigationLinks } from "../../../data/navigation";
 export class NavigationComponent implements OnInit {
   navigationLinks: Array<NavigationLink> = NavigationLinks;
   selectedLink: string;
+  activeLink: string;
 
-  constructor() { }
+  constructor(private location: Location, private router: Router) {
+    router.events.subscribe(() => {
+      if (this.activeLink !== location.path()) {
+        this.activeLink = location.path();
+      }
+    })
+  }
 
   ngOnInit() {
   }

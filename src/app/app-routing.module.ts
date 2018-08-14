@@ -5,7 +5,8 @@ import { CaseBuilderComponent } from "./components/display-container/case-builde
 
 const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },
-  { path: 'case-builder', component: CaseBuilderComponent }
+  { path: 'case-builder', component: CaseBuilderComponent },
+  { path: '', redirectTo: '/projects', pathMatch: 'full'}
 ];
 
 @NgModule({

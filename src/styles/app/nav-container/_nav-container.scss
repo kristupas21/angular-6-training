@@ -30,7 +30,8 @@ app-nav-container {
   padding-left: 8px;
   transition: background .2s ease-in-out;
 
-  &[ng-reflect-is-selected=true] {
+  &[ng-reflect-is-selected=true],
+  &[ng-reflect-is-active=true] {
     background: $green-dark;
   }
 }
