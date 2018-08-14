@@ -23,6 +23,8 @@ import { NavigationComponent } from './components/nav-container/navigation/navig
 import { NavLinkComponent } from './components/nav-container/navigation/nav-link/nav-link.component';
 // Reducers
 import { sideNavReducer, selectedNameReducer } from './reducers';
+import { CaseBuilderComponent } from './components/display-container/case-builder/case-builder.component';
+import { ProjectsComponent } from './components/display-container/projects/projects.component';
 
 
 
@@ -36,7 +38,9 @@ import { sideNavReducer, selectedNameReducer } from './reducers';
     IconUserComponent,
     NavigationComponent,
     NavLinkComponent,
-    IconChevronRightComponent
+    IconChevronRightComponent,
+    CaseBuilderComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,

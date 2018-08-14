@@ -3,9 +3,12 @@
     class="nav-link"
     app-nav-link
     *ngFor="let link of navigationLinks"
-    [name]="link | titlecase"
-    (mouseenter)="onMouseEnter(link)"
-    (mouseleave)="onMouseLeave(link)"
-    [isSelected]="link === selectedLink">
+    [name]="link.name | titlecase"
+    (mouseenter)="onMouseEnter(link.name)"
+    (mouseleave)="onMouseLeave(link.name)"
+    [isSelected]="link.name === selectedLink"
+    routerLink="{{link.path}}"
+    routerLinkActive="active"
+    >
   </li>
 </ul>

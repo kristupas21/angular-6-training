@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationLink } from "../../../interfaces/navigation-link";
 import { NavigationLinks } from "../../../data/navigation";
 
 @Component({
@@ -6,7 +7,7 @@ import { NavigationLinks } from "../../../data/navigation";
   templateUrl: './navigation.component.html'
 })
 export class NavigationComponent implements OnInit {
-  navigationLinks: Array<string> = NavigationLinks;
+  navigationLinks: Array<NavigationLink> = NavigationLinks;
   selectedLink: string;
 
   constructor() { }
@@ -14,12 +15,12 @@ export class NavigationComponent implements OnInit {
   ngOnInit() {
   }
 
-  onMouseEnter(link: string): void {
-    this.selectedLink = link;
+  onMouseEnter(name: string): void {
+    this.selectedLink = name;
   }
 
-  onMouseLeave(link: string): void {
-    if (this.selectedLink === link) {
+  onMouseLeave(name: string): void {
+    if (this.selectedLink === name) {
       this.selectedLink = '';
     }
   }
