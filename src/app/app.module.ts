@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // Modules
 import { StoreModule } from '@ngrx/store';
 import { MatButtonModule, MatSelectModule, MatSidenavModule } from '@angular/material';
-import { MatIconModule } from "@angular/material/icon";
+import { MatIconModule } from '@angular/material/icon';
 /* Internal */
 // Components
 import { AppComponent } from './app.component';
@@ -51,9 +51,9 @@ import { ProjectsComponent } from './components/display-container/projects/proje
     MatSelectModule,
     MatSidenavModule,
     MatIconModule,
-    StoreModule.forRoot({ 
+    StoreModule.forRoot({
       sideNavOpened: sideNavReducer,
-      selectedUser: selectedNameReducer 
+      selectedUser: selectedNameReducer
     })
   ],
   exports: [

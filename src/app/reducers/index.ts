@@ -1,7 +1,7 @@
 import { ActionsUnion, ActionTypes } from '../actions';
 
 export function sideNavReducer(state: boolean = true, action: ActionsUnion) {
-  switch(action.type) {
+  switch (action.type) {
     case ActionTypes.TOGGLE_SIDENAV:
       return !state;
 
@@ -11,7 +11,7 @@ export function sideNavReducer(state: boolean = true, action: ActionsUnion) {
 }
 
 export function selectedNameReducer(state: string = 'none', action: ActionsUnion) {
-  switch(action.type) {
+  switch (action.type) {
     case ActionTypes.SELECT_USER:
       return action.payload;
 

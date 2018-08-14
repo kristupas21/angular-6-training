@@ -9,9 +9,9 @@ app-nav-container {
 .mat-drawer {
   background-color: $color-primary;
   height: 100%;
-  min-width: 240px;
+  min-width: 200px;
   position: fixed;
-  width: 240px;
+  width: 200px;
 }
 
 .navigation {
@@ -21,12 +21,12 @@ app-nav-container {
 [app-nav-link] {
   @include flex-container($justify: flex-start);
   background: transparent;
-  color: $white;
+  color: $grey-ea;
   cursor: pointer;
-  font-size: 12px;
-  font-weight: 700;
-  height: 60px;
-  line-height: 60px;
+  font-size: 13px;
+  font-weight: 500;
+  height: 50px;
+  line-height: 50px;
   padding-left: 8px;
   transition: background .2s ease-in-out;
 
@@ -41,13 +41,13 @@ app-nav-container {
 
   &[ng-reflect-is-active=true] {
     border-left: 2px solid $white;
-    box-shadow: 0 2px 4px inset $black-transparent-02;
   }
 }
 
 .nav-link {
 
   &__text {
+    margin-left: 16px;
     min-width: 120px;
   }
 }

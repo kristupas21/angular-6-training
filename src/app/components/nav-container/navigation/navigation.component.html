@@ -8,6 +8,7 @@
     (mouseleave)="onMouseLeave(link.name)"
     [isSelected]="link.name === selectedLink"
     [isActive]="link.path === activeLink"
+    [icon]="link.icon"
     routerLink="{{link.path}}"
     routerLinkActive="active"
     >

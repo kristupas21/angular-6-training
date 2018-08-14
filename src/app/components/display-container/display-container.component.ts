@@ -11,12 +11,10 @@ import { AppState } from '../../interfaces/app-state';
 export class DisplayContainerComponent implements OnInit {
   selectedName: Observable<string>;
 
-  constructor(private store: Store<AppState>) { 
+  constructor(private store: Store<AppState>) {
     this.selectedName = store.pipe(select('selectedUser'));
   }
 
-  ngOnInit() {
-    
-  }
+  ngOnInit() {}
 
 }

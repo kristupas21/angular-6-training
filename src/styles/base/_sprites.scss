@@ -1,33 +1,74 @@
 %svg-common {
-  background: url('/assets/svg-sprite.svg') no-repeat;
+	background: url("/assets/svg-sprite.svg") no-repeat;
+}
+
+.svg__ballot {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+.svg__ballot--size {
+	width: 24px;
+	height: 24px;
 }
 
 .svg__chevron-right {
-  @extend %svg-common;
-  background-position: 0 0;
+	@extend %svg-common;
+	background-position: 50% 0;
 }
 
 .svg__chevron-right--size {
-  height: 24px;
-  width: 24px;
+	width: 24px;
+	height: 24px;
+}
+
+.svg__filter {
+	@extend %svg-common;
+	background-position: 0 54.54545454545455%;
+}
+
+.svg__filter--size {
+	width: 24px;
+	height: 24px;
+}
+
+.svg__label {
+	@extend %svg-common;
+	background-position: 50% 54.54545454545455%;
+}
+
+.svg__label--size {
+	width: 24px;
+	height: 24px;
+}
+
+.svg__new-folder {
+	@extend %svg-common;
+	background-position: 100% 0;
+}
+
+.svg__new-folder--size {
+	width: 24px;
+	height: 24px;
 }
 
 .svg__notifications-none {
-  @extend %svg-common;
-  background-position: 100% 0;
+	@extend %svg-common;
+	background-position: 92.3076923076923% 54.54545454545455%;
 }
 
 .svg__notifications-none--size {
-  height: 24px;
-  width: 20px;
+	width: 20px;
+	height: 24px;
 }
 
 .svg__person {
-  @extend %svg-common;
-  background-position: 0 100%;
+	@extend %svg-common;
+	background-position: 0 100%;
 }
 
 .svg__person--size {
-  height: 20px;
-  width: 20px;
+	width: 20px;
+	height: 20px;
 }
+

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProjectsComponent } from "./components/display-container/projects/projects.component";
-import { CaseBuilderComponent } from "./components/display-container/case-builder/case-builder.component";
+import { ProjectsComponent } from './components/display-container/projects/projects.component';
+import { CaseBuilderComponent } from './components/display-container/case-builder/case-builder.component';
 
 const routes: Routes = [
   { path: 'projects', component: ProjectsComponent },

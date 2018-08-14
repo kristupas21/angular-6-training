@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./icon-notification.component.scss']
 })
 export class IconNotificationComponent implements OnInit {
-  @Input() width: number = 20;
-  @Input() height: number = 24;
+  @Input() width = 20;
+  @Input() height = 24;
 
   constructor() { }
 

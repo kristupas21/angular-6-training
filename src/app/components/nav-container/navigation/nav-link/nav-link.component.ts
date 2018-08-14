@@ -9,6 +9,7 @@ export class NavLinkComponent implements OnInit {
   @Input() name: string;
   @Input() isSelected: boolean;
   @Input() isActive: boolean;
+  @Input() icon: string;
 
   constructor() { }
 

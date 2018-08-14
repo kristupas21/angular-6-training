@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from "../../interfaces/app-state";
+import { AppState } from '../../interfaces/app-state';
 import { Name } from '../../interfaces/names';
-import { Names } from "../../data/names";
+import { Names } from '../../data/names';
 import { ToggleSidenav, SelectUser } from '../../actions';
 
 @Component({

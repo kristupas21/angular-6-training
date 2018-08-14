@@ -6,8 +6,8 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./icon-user.component.scss']
 })
 export class IconUserComponent implements OnInit {
-  @Input() width: number = 20;
-  @Input() height: number = 20;
+  @Input() width = 20;
+  @Input() height = 20;
 
   constructor() { }
 

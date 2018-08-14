@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationLink } from "../../../interfaces/navigation-link";
-import { NavigationLinks } from "../../../data/navigation";
+import { NavigationLink } from '../../../interfaces/navigation-link';
+import { NavigationLinks } from '../../../data/navigation';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -19,7 +19,7 @@ export class NavigationComponent implements OnInit {
       if (this.activeLink !== location.path()) {
         this.activeLink = location.path();
       }
-    })
+    });
   }
 
   ngOnInit() {
