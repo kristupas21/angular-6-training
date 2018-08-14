@@ -25,6 +25,8 @@ import { NavLinkComponent } from './components/nav-container/navigation/nav-link
 import { sideNavReducer, selectedNameReducer } from './reducers';
 import { CaseBuilderComponent } from './components/display-container/case-builder/case-builder.component';
 import { ProjectsComponent } from './components/display-container/projects/projects.component';
+import { LabelExpComponent } from './components/display-container/label-exp/label-exp.component';
+import { FilterSetupComponent } from './components/display-container/filter-setup/filter-setup.component';
 
 
 
@@ -40,7 +42,9 @@ import { ProjectsComponent } from './components/display-container/projects/proje
     NavLinkComponent,
     IconChevronRightComponent,
     CaseBuilderComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    LabelExpComponent,
+    FilterSetupComponent
   ],
   imports: [
     BrowserModule,
