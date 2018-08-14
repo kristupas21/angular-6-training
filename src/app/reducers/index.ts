@@ -1,6 +1,6 @@
 import { ActionsUnion, ActionTypes } from '../actions';
 
-export function sideNavReducer(state: boolean = false, action: ActionsUnion) {
+export function sideNavReducer(state: boolean = true, action: ActionsUnion) {
   switch(action.type) {
     case ActionTypes.TOGGLE_SIDENAV:
       return !state;
