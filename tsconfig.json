@@ -16,6 +16,12 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@app-data/*": ["src/app/data/*"],
+      "@app-interfaces/*": ["src/app/interfaces/*"],
+      "@app-services/*": ["src/app/services/*"],
+      "@app-actions": ["src/app/actions"]
+    }
   }
 }

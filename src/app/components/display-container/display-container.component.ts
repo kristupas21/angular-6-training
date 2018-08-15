@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from '../../interfaces/app-state';
+import { AppState } from '@app-interfaces/app-state';
 
 
 @Component({

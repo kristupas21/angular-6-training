@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatTableDataSource } from '@angular/material';
-import { ProjectList } from '../../../../data/project-list';
+import { ProjectList } from '@app-data/project-list';
 
 @Component({
   selector: 'project-list',

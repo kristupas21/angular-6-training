@@ -1,4 +1,4 @@
-import { Project } from '../interfaces/project';
+import { Project } from '@app-interfaces/project';
 
 export const ProjectList: Project[] = [
   { name: 'list update' },

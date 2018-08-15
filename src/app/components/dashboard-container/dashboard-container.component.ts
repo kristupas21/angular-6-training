@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../interfaces/app-state';
-import { Name } from '../../interfaces/names';
-import { Names } from '../../data/names';
-import { ToggleSidenav, SelectUser } from '../../actions';
+import { AppState } from '@app-interfaces/app-state';
+import { Name } from '@app-interfaces/names';
+import { Names } from '@app-data/names';
+import { ToggleSidenav, SelectUser } from '@app-actions';
 
 @Component({
   selector: 'app-dashboard-container',

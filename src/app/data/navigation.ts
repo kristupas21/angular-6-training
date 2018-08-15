@@ -1,4 +1,4 @@
-import { NavigationLink } from '../interfaces/navigation-link';
+import { NavigationLink } from '@app-interfaces/navigation-link';
 
 export const NavigationLinks: Array<NavigationLink> = [
   { name: 'projects', path: '/projects', icon: 'ballot' },

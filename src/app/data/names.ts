@@ -1,4 +1,4 @@
-import { Name } from '../interfaces/names';
+import { Name } from '@app-interfaces/names';
 
 export const Names: Name[] = [
   { value: 'adriana', viewValue: 'Adriana' },

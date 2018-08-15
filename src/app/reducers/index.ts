@@ -1,4 +1,4 @@
-import { ActionsUnion, ActionTypes } from '../actions';
+import { ActionsUnion, ActionTypes } from '@app-actions';
 
 export function sideNavReducer(state: boolean = true, action: ActionsUnion) {
   switch (action.type) {

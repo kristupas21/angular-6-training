@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationLink } from '../../../interfaces/navigation-link';
-import { NavigationLinks } from '../../../data/navigation';
+import { NavigationLink } from '@app-interfaces/navigation-link';
+import { NavigationLinks } from '@app-data/navigation';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
