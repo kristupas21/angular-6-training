@@ -32,6 +32,7 @@ import { ProjectListComponent } from './components/display-container/projects/pr
 import { sideNavReducer, selectedNameReducer } from './reducers';
 // Services
 import { MessageService } from '@app-services/message.service';
+import { SideNavService } from '@app-services/sidenav.service';
 
 
 @NgModule({
@@ -70,7 +71,7 @@ import { MessageService } from '@app-services/message.service';
   exports: [
     MatButtonModule,
   ],
-  providers: [MessageService],
+  providers: [MessageService, SideNavService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
