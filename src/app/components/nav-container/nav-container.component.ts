@@ -20,5 +20,6 @@ export class NavContainerComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
