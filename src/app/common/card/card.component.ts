@@ -28,8 +28,8 @@ export class CardComponent implements OnInit {
   ngOnInit() {
   }
 
-  notifyDone(): void {
-    console.log('done!');
+  notifyDone(e): void {
+    console.log(`Animation from **${e.fromState}** to **${e.toState}** is **${e.phaseName}**.`);
   }
 
 }
