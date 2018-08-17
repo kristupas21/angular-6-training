@@ -7,8 +7,9 @@ export class SideNavService {
   private state = new BehaviorSubject<boolean>(true);
 
   toggleState(value?: boolean) {
-    this.state.next(value || !this.isOpen );
-    this.isOpen = !this.isOpen;
+    const val = typeof value !== 'undefined' ? value : !this.isOpen;
+    this.state.next( val );
+    this.isOpen = val;
   }
 
   getState(): Observable<any> {

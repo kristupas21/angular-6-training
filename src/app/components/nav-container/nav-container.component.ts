@@ -1,8 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
+import { SideNavService } from '@app-services/sidenav.service';
 // import { Store, select } from '@ngrx/store';
 // import { AppState } from '@app-interfaces/app-state';
-import { SideNavService } from '@app-services/sidenav.service';
 
 @Component({
   selector: 'app-nav-container',
