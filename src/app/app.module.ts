@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /* External */
 // Modules
 import { StoreModule } from '@ngrx/store';
-import { MatButtonModule, MatSelectModule, MatSidenavModule, MatTableModule, MatSortModule } from '@angular/material';
+import { MatButtonModule, MatSelectModule, MatSidenavModule, MatTableModule, MatSortModule, MatCardModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 // Components
 
@@ -33,8 +33,10 @@ import { sideNavReducer, selectedNameReducer } from './reducers';
 // Services
 import { MessageService } from '@app-services/message.service';
 import { SideNavService } from '@app-services/sidenav.service';
+import { NotificationService } from '@app-services/notification.service';
 // Pipes
 import { ReversedPipe } from './pipes/test-pipe';
+import { CardComponent } from './common/card/card.component';
 
 
 @NgModule({
@@ -53,7 +55,8 @@ import { ReversedPipe } from './pipes/test-pipe';
     LabelExpComponent,
     FilterSetupComponent,
     ProjectListComponent,
-    ReversedPipe
+    ReversedPipe,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +69,7 @@ import { ReversedPipe } from './pipes/test-pipe';
     MatIconModule,
     MatTableModule,
     MatSortModule,
+    MatCardModule,
     StoreModule.forRoot({
       sideNavOpened: sideNavReducer,
       selectedUser: selectedNameReducer
@@ -74,7 +78,7 @@ import { ReversedPipe } from './pipes/test-pipe';
   exports: [
     MatButtonModule,
   ],
-  providers: [MessageService, SideNavService],
+  providers: [MessageService, SideNavService, NotificationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

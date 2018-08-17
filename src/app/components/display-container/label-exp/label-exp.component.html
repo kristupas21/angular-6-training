@@ -1,3 +1,10 @@
 <section class="display-item">
   {{title | titlecase}}
+  <br />
+  <br />
+  <button color="primary" mat-flat-button (click)="toggleNotification()">{{'show notification' | uppercase}}</button>
+  <br />
+  <br />
+  <button color="primary" mat-flat-button (click)="setCardProps()">{{'set card props' | uppercase}}</button>
+  <app-card [visible]="notificationState" [cardProps]="cardProps"></app-card>
 </section>
