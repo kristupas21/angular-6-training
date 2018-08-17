@@ -2,7 +2,7 @@ import { Component, OnDestroy } from '@angular/core';
 import { NotificationService } from '@app-services/notification.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { CardProps } from '@app-interfaces/card-props';
-import { contentCardMock } from '@app-data/card-content';
+import { contentCardMock } from '@app-data';
 
 @Component({
   selector: 'app-label-exp',

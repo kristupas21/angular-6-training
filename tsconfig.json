@@ -19,6 +19,7 @@
     ],
     "paths": {
       "@app-data/*": ["src/app/data/*"],
+      "@app-data": ["src/app/data/index.ts"],
       "@app-interfaces/*": ["src/app/interfaces/*"],
       "@app-services/*": ["src/app/services/*"],
       "@app-actions": ["src/app/actions"]
