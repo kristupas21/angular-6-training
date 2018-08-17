@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NotificationService } from '@app-services/notification.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { CardProps } from '@app-interfaces/card-props';
@@ -7,7 +7,7 @@ import { CardProps } from '@app-interfaces/card-props';
   selector: 'app-label-exp',
   templateUrl: './label-exp.component.html'
 })
-export class LabelExpComponent implements OnInit, OnDestroy {
+export class LabelExpComponent implements OnDestroy {
   public title = 'label expectation';
   public notificationState = 'invisible';
   public cardProps: CardProps;
@@ -16,6 +16,7 @@ export class LabelExpComponent implements OnInit, OnDestroy {
     title: 'Card updated',
     content: 'The card was successfully updated. The notification system works as expected.'
   };
+  public toggleDisabled = false;
 
   constructor(private _notificationService: NotificationService) {
     this.subscription =
@@ -24,13 +25,21 @@ export class LabelExpComponent implements OnInit, OnDestroy {
         .subscribe(state => this.cardProps = state);
   }
 
-  ngOnInit() {
-  }
-
-  toggleNotification() {
+  toggleNotification(autoRemove?: boolean) {
     this.notificationState === 'invisible'
       ? this.notificationState = 'visible'
       : this.notificationState = 'invisible';
+
+    if (autoRemove && this.notificationState !== 'invisible') {
+      this.toggleDisabled = true;
+      this.setInvisible();
+    }
+  }
+
+  setInvisible(): void {
+    setTimeout(() => {
+      this.notificationState = 'invisible';
+    }, 1500);
   }
 
   setCardProps() {
