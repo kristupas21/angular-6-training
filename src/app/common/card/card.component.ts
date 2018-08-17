@@ -14,8 +14,8 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
       state('invisible', style({
         transform: 'translateX(calc(100% + 20px))'
       })),
-      transition('invisible => visible', animate('300ms ease-in')),
-      transition('visible => invisible', animate('300ms ease-out'))
+      transition('invisible => visible', animate('300ms 100ms ease-in')),
+      transition('visible => invisible', animate('300ms 100ms ease-out'))
     ])
   ]
 })
@@ -26,6 +26,10 @@ export class CardComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  notifyDone(): void {
+    console.log('done!');
   }
 
 }

@@ -1,4 +1,4 @@
-<mat-card class="notification-card" [@isVisible]="visible">
+<mat-card class="notification-card" [@isVisible]="visible" (@isVisible.done)="notifyDone()">
   <mat-card-title>
     {{card.title}}
   </mat-card-title>
