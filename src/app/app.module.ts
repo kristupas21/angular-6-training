@@ -33,6 +33,8 @@ import { sideNavReducer, selectedNameReducer } from './reducers';
 // Services
 import { MessageService } from '@app-services/message.service';
 import { SideNavService } from '@app-services/sidenav.service';
+// Pipes
+import { ReversedPipe } from './pipes/test-pipe';
 
 
 @NgModule({
@@ -51,6 +53,7 @@ import { SideNavService } from '@app-services/sidenav.service';
     LabelExpComponent,
     FilterSetupComponent,
     ProjectListComponent,
+    ReversedPipe
   ],
   imports: [
     BrowserModule,
