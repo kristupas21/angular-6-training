@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({ name: 'reversed' })
 export class ReversedPipe implements PipeTransform {
-  transform(value: string): string {
+  transform(value: string, exponent?: number): string {
     if (!value) {
       return '';
     }
@@ -14,6 +14,6 @@ export class ReversedPipe implements PipeTransform {
     const valueArr = value.split('');
     const reversedArr = valueArr.reverse();
 
-    return reversedArr.join('');
+    return reversedArr.join('') + exponent;
   }
 }

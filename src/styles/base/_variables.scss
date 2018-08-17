@@ -15,3 +15,10 @@ $black-transparent-02: rgba(0, 0, 0, .2);
 $grey-ea: #eaeaea;
 $grey-f4: #f4f4f4;
 $grey-8f: #8f8f8f;
+
+// sass-lint:disable no-vendor-prefixes
+.test-property {
+  -webkit-tap-highlight-color: transparent;
+}
+
+// sass-lint:enable no-vendor-prefixes
