@@ -30,6 +30,8 @@ import { FilterSetupComponent } from './components/display-container/filter-setu
 import { ProjectListComponent } from './components/display-container/projects/project-list/project-list.component';
 // Reducers
 import { sideNavReducer, selectedNameReducer } from './reducers';
+// Services
+import { MessageService } from '@app-services/message.service';
 
 
 @NgModule({
@@ -68,7 +70,7 @@ import { sideNavReducer, selectedNameReducer } from './reducers';
   exports: [
     MatButtonModule,
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import { AppState } from '@app-interfaces/app-state';
 import { Name } from '@app-interfaces/names';
 import { Names } from '@app-data/names';
 import { ToggleSidenav, SelectUser } from '@app-actions';
+import { MessageService } from '@app-services/message.service';
 
 @Component({
   selector: 'app-dashboard-container',
@@ -11,9 +12,9 @@ import { ToggleSidenav, SelectUser } from '@app-actions';
 })
 export class DashboardContainerComponent implements OnInit {
   names: Name[] = Names;
-  selectedName: Name = Names[0];
+  messageSent = false;
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>, private service: MessageService) { }
 
   ngOnInit() {
   }
@@ -24,5 +25,13 @@ export class DashboardContainerComponent implements OnInit {
 
   onChange(value: string) {
     this.store.dispatch(new SelectUser(value));
+  }
+
+  handleMessage(): void {
+    this.messageSent
+      ? this.service.clearMessage()
+      : this.service.sendMessage('Message SENT!');
+
+    this.messageSent = !this.messageSent;
   }
 }

@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { MessageService } from '@app-services/message.service';
 
 @Component({
   selector: 'app-case-builder',
   templateUrl: './case-builder.component.html'
 })
-export class CaseBuilderComponent implements OnInit {
+export class CaseBuilderComponent implements OnDestroy {
   title = 'test case builder';
+  message: any = {};
+  subscription: Subscription;
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor(private messageService: MessageService) {
+    this.subscription =
+      this.messageService
+        .getMessage()
+        .subscribe(message => { this.message = message });
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }
