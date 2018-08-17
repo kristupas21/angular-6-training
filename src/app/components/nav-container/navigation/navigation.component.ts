@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavigationLink } from '@app-interfaces/navigation-link';
 import { NavigationLinks } from '@app-data/navigation';
 import { Router } from '@angular/router';
@@ -9,20 +9,17 @@ import { Location } from '@angular/common';
   selector: 'app-navigation',
   templateUrl: './navigation.component.html'
 })
-export class NavigationComponent implements OnInit {
-  navigationLinks: Array<NavigationLink> = NavigationLinks;
-  selectedLink: string;
-  activeLink: string;
+export class NavigationComponent {
+  public navigationLinks: Array<NavigationLink> = NavigationLinks;
+  public selectedLink: string;
+  public activeLink: string;
 
-  constructor(private location: Location, private router: Router) {
-    router.events.subscribe(() => {
-      if (this.activeLink !== location.path()) {
-        this.activeLink = location.path();
+  constructor(private _location: Location, private _router: Router) {
+    _router.events.subscribe(() => {
+      if (this.activeLink !== _location.path()) {
+        this.activeLink = _location.path();
       }
     });
-  }
-
-  ngOnInit() {
   }
 
   onMouseEnter(name: string): void {
@@ -34,5 +31,4 @@ export class NavigationComponent implements OnInit {
       this.selectedLink = '';
     }
   }
-
 }

@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './filter-setup.component.html'
 })
 export class FilterSetupComponent implements OnInit {
-  title = 'filter setup';
+  public title = 'filter setup';
 
   constructor() { }
 

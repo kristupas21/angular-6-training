@@ -6,3 +6,5 @@ export const ProjectList: Project[] = [
   { name: 'project accuity', status: 3 },
   { name: 'project devbridge', status: 2 }
 ];
+
+export const ProjectListColumns: Array<string> = ['name', 'description', 'status', 'createdOn', 'closedOn'];

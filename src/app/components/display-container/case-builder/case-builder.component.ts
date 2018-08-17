@@ -7,9 +7,9 @@ import { MessageService } from '@app-services/message.service';
   templateUrl: './case-builder.component.html'
 })
 export class CaseBuilderComponent implements OnDestroy {
-  title = 'test case builder';
-  message: any = {};
-  subscription: Subscription;
+  public  title = 'test case builder';
+  public  message: any = {};
+  private subscription: Subscription;
 
   constructor(private messageService: MessageService) {
     this.subscription =

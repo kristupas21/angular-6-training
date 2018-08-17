@@ -2,21 +2,19 @@ import { Component, OnDestroy } from '@angular/core';
 import { NotificationService } from '@app-services/notification.service';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { CardProps } from '@app-interfaces/card-props';
+import { contentCardMock } from '@app-data/card-content';
 
 @Component({
   selector: 'app-label-exp',
   templateUrl: './label-exp.component.html'
 })
 export class LabelExpComponent implements OnDestroy {
-  public title = 'label expectation';
-  public notificationState = 'invisible';
-  public cardProps: CardProps;
+  public  title = 'label expectation';
+  public  notificationState = 'invisible';
+  public  cardProps: CardProps;
+  public  toggleDisabled = false;
   private subscription: Subscription;
-  private cardContentMock = {
-    title: 'Card updated',
-    content: 'The card was successfully updated. The notification system works as expected.'
-  };
-  public toggleDisabled = false;
+  private cardContentMock = contentCardMock;
 
   constructor(private _notificationService: NotificationService) {
     this.subscription =

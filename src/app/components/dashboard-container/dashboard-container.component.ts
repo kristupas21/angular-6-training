@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app-interfaces/app-state';
 import { Name } from '@app-interfaces/names';
@@ -12,40 +12,33 @@ import { Subscription } from 'rxjs/index';
   selector: 'app-dashboard-container',
   templateUrl: './dashboard-container.component.html',
 })
-export class DashboardContainerComponent implements OnInit {
-  names: Name[] = Names;
-  messageSent = false;
-  subscription: Subscription;
+export class DashboardContainerComponent {
+  public  names: Name[] = Names;
+  public  messageSent = false;
+  private subscription: Subscription;
 
   constructor(
-    private store: Store<AppState>,
-    private messageService: MessageService,
-    private sideNavService: SideNavService
+    private _store: Store<AppState>,
+    private _messageService: MessageService,
+    private _sideNavService: SideNavService
   ) {
     this.subscription =
-      this.messageService
+      this._messageService
         .getMessage()
         .subscribe(message => { this.messageSent = !!message });
   }
 
-  ngOnInit() {
-  }
-
-  // toggleSideNav(): void {
-  //   this.store.dispatch(new ToggleSidenav);
-  // }
-
   onChange(value: string) {
-    this.store.dispatch(new SelectUser(value));
+    this._store.dispatch(new SelectUser(value));
   }
 
   toggleSideNav() {
-    this.sideNavService.toggleState();
+    this._sideNavService.toggleState();
   }
 
   handleMessage(): void {
     this.messageSent
-      ? this.messageService.clearMessage()
-      : this.messageService.sendMessage('Message SENT!');
+      ? this._messageService.clearMessage()
+      : this._messageService.sendMessage('Message SENT!');
   }
 }

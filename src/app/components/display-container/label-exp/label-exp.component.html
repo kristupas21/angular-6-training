@@ -2,9 +2,27 @@
   {{title | titlecase}}
   <br />
   <br />
-  <button color="primary" [disabled]="toggleDisabled" mat-flat-button (click)="toggleNotification(true)">{{'show notification' | uppercase}}</button>
+  <button
+    color="primary"
+    [disabled]="toggleDisabled"
+    mat-flat-button
+    (click)="toggleNotification(true)"
+  >
+    {{'show notification' | uppercase}}
+  </button>
   <br />
   <br />
-  <button color="primary" mat-flat-button (click)="setCardProps()">{{'set card props' | uppercase}}</button>
-  <app-card [visible]="notificationState" [cardProps]="cardProps" (enableToggle)="toggleDisabled = $event"></app-card>
+  <button
+    color="primary"
+    mat-flat-button
+    (click)="setCardProps()"
+  >
+    {{'set card props' | uppercase}}
+  </button>
+  <app-card
+    [visible]="notificationState"
+    [cardProps]="cardProps"
+    (enableToggle)="toggleDisabled = $event"
+  >
+  </app-card>
 </section>
