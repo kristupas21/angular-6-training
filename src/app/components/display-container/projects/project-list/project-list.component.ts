@@ -3,7 +3,7 @@ import { MatSort, MatTableDataSource } from '@angular/material';
 import { ProjectList, ProjectListColumns } from '@app-data/project-list';
 
 @Component({
-  selector: 'project-list',
+  selector: 'app-project-list',
   templateUrl: './project-list.component.html'
 })
 export class ProjectListComponent implements OnInit {

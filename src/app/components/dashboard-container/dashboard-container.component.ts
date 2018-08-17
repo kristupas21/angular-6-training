@@ -25,7 +25,7 @@ export class DashboardContainerComponent {
     this.subscription =
       this._messageService
         .getMessage()
-        .subscribe(message => { this.messageSent = !!message });
+        .subscribe(message => { this.messageSent = !!message; });
   }
 
   onChange(value: string) {

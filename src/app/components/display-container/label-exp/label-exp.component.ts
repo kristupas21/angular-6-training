@@ -41,7 +41,7 @@ export class LabelExpComponent implements OnDestroy {
   }
 
   setCardProps() {
-    this._notificationService.setState(this.cardContentMock)
+    this._notificationService.setState(this.cardContentMock);
   }
 
   ngOnDestroy() {

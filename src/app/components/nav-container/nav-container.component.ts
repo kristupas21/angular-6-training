@@ -14,7 +14,7 @@ export class NavContainerComponent implements OnDestroy {
     this.subscription =
       this.sideNavService
         .getState()
-        .subscribe(state => { this.sideNavOpen = state });
+        .subscribe(state => this.sideNavOpen = state);
   }
 
   ngOnDestroy() {

@@ -15,7 +15,7 @@ export class CaseBuilderComponent implements OnDestroy {
     this.subscription =
       this.messageService
         .getMessage()
-        .subscribe(message => { this.message = message });
+        .subscribe(message => { this.message = message; });
   }
 
   ngOnDestroy() {
