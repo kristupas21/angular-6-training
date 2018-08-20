@@ -23,7 +23,7 @@ export class LoginFormComponent {
     this.password = e.target['login-password'].value;
 
     this._userTokenService.setUserDetails(this.userName, this.password);
-    this._router.navigate(['']);
+    this._router.navigate(['main']);
   }
 
 }

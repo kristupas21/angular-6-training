@@ -18,7 +18,7 @@ export class NavigationComponent {
     _router.events.subscribe(() => {
       const p = _location.path();
       const l = p.length - 1;
-      const n = p.slice(7, l);
+      const n = p.slice(12, l);
 
       if (this.activeLink !== n) {
         this.activeLink = n;
