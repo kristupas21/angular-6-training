@@ -16,8 +16,12 @@ export class NavigationComponent {
 
   constructor(private _location: Location, private _router: Router) {
     _router.events.subscribe(() => {
-      if (this.activeLink !== _location.path()) {
-        this.activeLink = _location.path();
+      const p = _location.path();
+      const l = p.length - 1;
+      const n = p.slice(7, l);
+
+      if (this.activeLink !== n) {
+        this.activeLink = n;
       }
     });
   }

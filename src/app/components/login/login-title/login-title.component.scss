@@ -1,0 +1,27 @@
+@import '~src/styles/base/variables';
+@import '~src/styles/base/mixins';
+
+.login-title {
+
+  &__item {
+    @include flex-container();
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  &__title {
+    color: $grey-6b;
+    font-size: 33px;
+    font-weight: 300;
+    height: 75%;
+  }
+
+  &__logo {
+    align-items: flex-start;
+    height: 25%;
+  }
+
+  &__img {
+    width: 160px;
+  }
+}

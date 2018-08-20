@@ -9,7 +9,7 @@
     [isSelected]="link.name === selectedLink"
     [isActive]="link.path === activeLink"
     [icon]="link.icon"
-    routerLink="{{link.path}}"
+    [routerLink]="[{ outlets: { menu: [link.path]}}]"
     routerLinkActive="active"
     >
   </li>

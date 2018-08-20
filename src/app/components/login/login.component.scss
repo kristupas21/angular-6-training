@@ -1,0 +1,50 @@
+@import '~src/styles/base/variables';
+@import '~src/styles/base/mixins';
+
+.login {
+  height: 100vh;
+  min-height: 800px;
+  min-width: 1280px;
+  position: relative;
+  width: 100%;
+
+  &__content {
+    @include flex-container();
+    background: $grey-f4;
+    border-top: 4px solid $color-primary;
+    box-shadow: 0 8px 4px -6px $black-transparent-05;
+    height: 505px;
+    left: 50%;
+    position: absolute;
+    top: 125px;
+    transform: translateX(-50%);
+    width: 760px;
+  }
+
+  &__footer {
+    bottom: 32px;
+    color: $grey-86;
+    font-size: 12px;
+    font-weight: 700;
+    left: 50%;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%);
+    width: 300px;
+  }
+}
+
+app-login-form,
+app-login-title {
+  box-sizing: border-box;
+  height: 100%;
+  width: 50%;
+}
+
+app-login-title {
+  border-right: 1px solid $black-transparent-02;
+}
+
+app-login-form {
+  @include flex-container($direction: column);
+}

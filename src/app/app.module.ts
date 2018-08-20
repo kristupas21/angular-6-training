@@ -34,9 +34,14 @@ import { sideNavReducer, selectedNameReducer } from './reducers';
 import { MessageService } from '@app-services/message.service';
 import { SideNavService } from '@app-services/sidenav.service';
 import { NotificationService } from '@app-services/notification.service';
+import { UserToken as UserTokenService } from '@app-services/user-token.service';
 // Pipes
 import { ReversedPipe } from './pipes/test-pipe';
 import { CardComponent } from './common/card/card.component';
+import { LoginComponent } from './components/login/login.component';
+import { MainComponent } from './components/main/main.component';
+import { LoginTitleComponent } from './components/login/login-title/login-title.component';
+import { LoginFormComponent } from './components/login/login-form/login-form.component';
 
 
 @NgModule({
@@ -56,7 +61,11 @@ import { CardComponent } from './common/card/card.component';
     FilterSetupComponent,
     ProjectListComponent,
     ReversedPipe,
-    CardComponent
+    CardComponent,
+    LoginComponent,
+    MainComponent,
+    LoginTitleComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,9 +85,9 @@ import { CardComponent } from './common/card/card.component';
     })
   ],
   exports: [
-    MatButtonModule,
+    MatButtonModule
   ],
-  providers: [MessageService, SideNavService, NotificationService],
+  providers: [MessageService, SideNavService, NotificationService, UserTokenService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
