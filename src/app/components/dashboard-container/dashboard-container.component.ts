@@ -4,9 +4,10 @@ import { AppState } from '@app-interfaces/app-state';
 import { Name } from '@app-interfaces/names';
 import { Names } from '@app-data/names';
 import { SelectUser } from '@app-actions';
-import { MessageService } from '@app-services/message.service';
 import { SideNavService } from '@app-services/sidenav.service';
-import { Subscription } from 'rxjs/index';
+import { LocalStorageService } from '@app-services/local-storage.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-dashboard-container',
@@ -14,19 +15,13 @@ import { Subscription } from 'rxjs/index';
 })
 export class DashboardContainerComponent {
   public  names: Name[] = Names;
-  public  messageSent = false;
-  private subscription: Subscription;
 
   constructor(
     private _store: Store<AppState>,
-    private _messageService: MessageService,
-    private _sideNavService: SideNavService
-  ) {
-    this.subscription =
-      this._messageService
-        .getMessage()
-        .subscribe(message => { this.messageSent = !!message; });
-  }
+    private _sideNavService: SideNavService,
+    private _localStorageService: LocalStorageService,
+    private _router: Router
+  ) {}
 
   onChange(value: string) {
     this._store.dispatch(new SelectUser(value));
@@ -36,9 +31,8 @@ export class DashboardContainerComponent {
     this._sideNavService.toggleState();
   }
 
-  handleMessage(): void {
-    this.messageSent
-      ? this._messageService.clearMessage()
-      : this._messageService.sendMessage('Message SENT!');
+ clearStorage(): void {
+    this._localStorageService.deleteUser();
+    this._router.navigate(['login']);
   }
 }
