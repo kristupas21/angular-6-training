@@ -2,17 +2,58 @@
   Log in to your account
 </div>
 <form class="login-form__form" (submit)="loginUser($event)">
+  <div class="login-form__alert" *ngIf="(loginUsername.invalid && (loginUsername.dirty || loginUsername.touched ))">
+    <div *ngIf="!!loginUsername.errors.required">
+      Username is required.
+    </div>
+    <div *ngIf="!!loginUsername.errors.minlength">
+      Username must be at least 4 chars long.
+    </div>
+  </div>
+  <div class="login-form__alert" *ngIf="(loginUsername.valid && loginPassword.invalid && (loginPassword.dirty || loginPassword.touched ))">
+    <div *ngIf="!!loginPassword.errors.required">
+      Password is required.
+    </div>
+    <div *ngIf="!!loginPassword.errors.minlength">
+      Password must be at least 4 chars long.
+    </div>
+  </div>
+  <div class="login-form__alert" *ngIf="(loginUsername.valid && loginPassword.valid && invalidCredentials)">
+    Access denied: invalid credentials.
+  </div>
   <div class="login-form__field">
     <label class="login-form__label" for="login-username">
       Username
     </label>
-    <input class="login-form__input" id="login-username" type="text" placeholder="Enter your username" />
+    <input
+      class="login-form__input"
+      id="login-username"
+      name="loginUsername"
+      [(ngModel)]="login.userName"
+      #loginUsername="ngModel"
+      type="text"
+      placeholder="Enter your username"
+      required
+      minlength="4"
+      (focus)="resetCredentials()"
+    />
   </div>
   <div class="login-form__field">
     <label class="login-form__label" for="login-password">
       Password
     </label>
-    <input class="login-form__input" id="login-password" type="text" placeholder="Enter your password" />
+    <input
+      class="login-form__input"
+      id="login-password"
+      name="loginPassword"
+      [(ngModel)]="login.password"
+      #loginPassword="ngModel"
+      type="text"
+      placeholder="Enter your password"
+      required
+      minlength="4"
+      (focus)="resetCredentials()"
+    />
   </div>
   <div class="login-form__controls">
     <button mat-flat-button color="primary" type="submit">LOG IN</button>

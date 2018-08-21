@@ -2,6 +2,10 @@
 @import '~src/styles/base/mixins';
 
 .login-form {
+  &__form {
+    position: relative;
+  }
+
   &__title {
     color: $grey-6b;
     font-size: 18px;
@@ -44,5 +48,36 @@
     &::placeholder {
       color: $grey-a53;
     }
+  }
+
+  &__alert {
+    color: $color-error;
+    font-size: 12px;
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: -12px;
+    width: 100%;
+
+    &--top {
+      top: -20px;
+    }
+
+    &--bottom {
+      top: -10px;
+    }
+  }
+}
+
+.ng-valid[required],
+.ng-valid.required  {
+  border: 1px solid $color-primary;
+}
+
+.ng-invalid.ng-dirty,
+.ng-invalid.ng-touched {
+  &:not(form) {
+    border: 1px solid $color-error;
   }
 }

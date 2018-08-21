@@ -35,6 +35,7 @@ import { MessageService } from '@app-services/message.service';
 import { SideNavService } from '@app-services/sidenav.service';
 import { NotificationService } from '@app-services/notification.service';
 import { UserToken as UserTokenService } from '@app-services/user-token.service';
+import { TestService } from '@app-services/test-service.service';
 // Pipes
 import { ReversedPipe } from './pipes/test-pipe';
 import { CardComponent } from './common/card/card.component';
@@ -42,6 +43,7 @@ import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
 import { LoginTitleComponent } from './components/login/login-title/login-title.component';
 import { LoginFormComponent } from './components/login/login-form/login-form.component';
+import { SmartInputComponent } from './components/login/login-form/smart-input/smart-input.component';
 
 
 @NgModule({
@@ -66,6 +68,7 @@ import { LoginFormComponent } from './components/login/login-form/login-form.com
     MainComponent,
     LoginTitleComponent,
     LoginFormComponent,
+    SmartInputComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +90,7 @@ import { LoginFormComponent } from './components/login/login-form/login-form.com
   exports: [
     MatButtonModule
   ],
-  providers: [MessageService, SideNavService, NotificationService, UserTokenService],
+  providers: [MessageService, SideNavService, NotificationService, UserTokenService, TestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

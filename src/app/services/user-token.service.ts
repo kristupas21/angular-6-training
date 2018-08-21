@@ -8,12 +8,12 @@ export class UserToken {
   };
   public cleared = false;
 
-  setUserDetails(userName, password) {
+  setUserDetails(userName, password): void {
     this.userDetails.userName = userName;
     this.userDetails.password = password;
   }
 
-  clearUserDetails() {
+  clearUserDetails(): void {
     if (!this.cleared) {
       this.cleared = true;
       this.userDetails.userName = null;
@@ -21,7 +21,7 @@ export class UserToken {
     }
   }
 
-  unClear() {
+  unClear(): void {
     this.cleared = false;
   }
 }

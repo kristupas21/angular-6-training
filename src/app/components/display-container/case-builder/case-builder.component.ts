@@ -1,21 +1,39 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { MessageService } from '@app-services/message.service';
+import { UserDetails } from '@app-interfaces/user-details';
+import { TestService } from '@app-services/test-service.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-case-builder',
   templateUrl: './case-builder.component.html'
 })
-export class CaseBuilderComponent implements OnDestroy {
-  public  title = 'test case builder';
-  public  message: any = {};
+export class CaseBuilderComponent implements OnDestroy, OnInit {
+  public title = 'test case builder';
+  public bool: boolean;
+  public obs: UserDetails;
   private subscription: Subscription;
 
-  constructor(private messageService: MessageService) {
+  constructor(
+    private _testService: TestService
+  ) {
     this.subscription =
-      this.messageService
-        .getMessage()
-        .subscribe(message => { this.message = message; });
+      this._testService
+        .getBool()
+        .subscribe(bool => { this.bool = bool; });
+
+      this._testService
+        .getTestObs()
+        .subscribe(obs => { this.obs = obs });
+  }
+
+  ngOnInit() {
+
+  }
+
+  changeBool() {
+    this._testService.setTestObs({userName: 'Chris', password: 'ho'});
+    this._testService.setBool(!this.bool);
   }
 
   ngOnDestroy() {

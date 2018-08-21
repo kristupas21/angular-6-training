@@ -1,6 +1,10 @@
 <section class="display-item">
   {{title | titlecase }}
   <div style="background: #c1c1c1">
-    {{message?.text | reversed: 5}}
+    {{ obs?.userName }} --- {{ obs?.password }}
   </div>
+  <div style="background: #a1a1a1">
+    {{ bool }}
+  </div>
+  <button mat-flat-button color="primary" (click)="changeBool()">Change</button>
 </section>
