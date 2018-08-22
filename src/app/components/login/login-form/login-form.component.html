@@ -1,22 +1,12 @@
-<div class="login-form__title">
+<div class="login-form__title xxx">
   Log in to your account
 </div>
 <form class="login-form__form" (submit)="loginUser($event)">
   <div class="login-form__alert" *ngIf="(loginUsername.invalid && (loginUsername.dirty || loginUsername.touched ))">
-    <div *ngIf="!!loginUsername.errors.required">
-      Username is required.
-    </div>
-    <div *ngIf="!!loginUsername.errors.minlength">
-      Username must be at least 4 chars long.
-    </div>
+    Username is required.
   </div>
   <div class="login-form__alert" *ngIf="(loginUsername.valid && loginPassword.invalid && (loginPassword.dirty || loginPassword.touched ))">
-    <div *ngIf="!!loginPassword.errors.required">
-      Password is required.
-    </div>
-    <div *ngIf="!!loginPassword.errors.minlength">
-      Password must be at least 4 chars long.
-    </div>
+    Password is required.
   </div>
   <div class="login-form__alert" *ngIf="(loginUsername.valid && loginPassword.valid && invalidCredentials)">
     Access denied: invalid credentials.
@@ -34,8 +24,8 @@
       type="text"
       placeholder="Enter your username"
       required
-      minlength="4"
       (focus)="resetCredentials()"
+      (ngModelChange)="resetCredentials()"
     />
   </div>
   <div class="login-form__field">
@@ -51,8 +41,8 @@
       type="text"
       placeholder="Enter your password"
       required
-      minlength="4"
       (focus)="resetCredentials()"
+      (ngModelChange)="resetCredentials()"
     />
   </div>
   <div class="login-form__controls">

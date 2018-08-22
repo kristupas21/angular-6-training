@@ -51,3 +51,12 @@ input {
   right: 15px;
   width: 140px;
 }
+
+app-login {
+  @include flex-container();
+  box-sizing: border-box;
+  height: 100vh;
+  min-height: 600px;
+  min-width: 1024px;
+  width: 100%;
+}

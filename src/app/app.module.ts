@@ -43,8 +43,6 @@ import { LoginComponent } from './components/login/login.component';
 import { MainComponent } from './components/main/main.component';
 import { LoginTitleComponent } from './components/login/login-title/login-title.component';
 import { LoginFormComponent } from './components/login/login-form/login-form.component';
-import { SmartInputComponent } from './components/login/login-form/smart-input/smart-input.component';
-
 
 @NgModule({
   declarations: [
@@ -68,7 +66,6 @@ import { SmartInputComponent } from './components/login/login-form/smart-input/s
     MainComponent,
     LoginTitleComponent,
     LoginFormComponent,
-    SmartInputComponent,
   ],
   imports: [
     BrowserModule,

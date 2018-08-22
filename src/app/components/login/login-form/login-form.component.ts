@@ -14,7 +14,6 @@ export class LoginFormComponent implements OnInit {
     password: ''
   };
   public invalidCredentials = false;
-  public submitRecorded = false;
 
   constructor(
     private _router: Router,
@@ -27,10 +26,6 @@ export class LoginFormComponent implements OnInit {
 
   public loginUser(e): void {
     e.preventDefault();
-
-    if (!this.submitRecorded) {
-      this.submitRecorded = true;
-    }
 
     if (!_.includes(e.target.classList, 'ng-invalid')) {
         this.invalidCredentials = true;

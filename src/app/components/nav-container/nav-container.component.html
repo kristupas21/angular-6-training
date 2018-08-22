@@ -1,5 +1,5 @@
-<mat-sidenav-container>
-  <mat-sidenav [opened]="sideNavOpen" #sidenav mode="side">
-    <app-navigation></app-navigation>
+<mat-sidenav-container [ngClass]="{'sideNav--small': !sideNavOpen}">
+  <mat-sidenav [opened]="true" #sidenav mode="side">
+    <app-navigation [small]="!sideNavOpen"></app-navigation>
   </mat-sidenav>
 </mat-sidenav-container>

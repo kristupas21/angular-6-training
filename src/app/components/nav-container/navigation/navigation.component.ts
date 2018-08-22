@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NavigationLinks } from '@app-data/navigation';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UserToken } from '@app-services/user-token.service';
@@ -12,6 +12,7 @@ export class NavigationComponent implements OnInit {
   public navigationLinks = NavigationLinks;
   public selectedLink: string;
   public activeLink: string;
+  @Input() small: boolean;
 
   constructor(
     private _router: Router,
