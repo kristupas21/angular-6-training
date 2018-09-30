@@ -1,13 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
+import { akitaDevtools } from '@datorama/akita';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
 
-  constructor() {
+  constructor(private ngZone: NgZone) {
+    akitaDevtools(this.ngZone);
+  }
 
+  ngOnInit() {
+   
   }
 }

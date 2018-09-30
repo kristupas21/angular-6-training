@@ -30,6 +30,9 @@ import { FilterSetupComponent } from './components/display-container/filter-setu
 import { ProjectListComponent } from './components/display-container/projects/project-list/project-list.component';
 // Reducers
 import { sideNavReducer, selectedNameReducer } from './reducers';
+import { UserComponent } from './components/user/user.component';
+import { CommonModule } from '@angular/common';
+import { UsersStore } from './akita/user.store';
 
 
 @NgModule({
@@ -48,8 +51,10 @@ import { sideNavReducer, selectedNameReducer } from './reducers';
     LabelExpComponent,
     FilterSetupComponent,
     ProjectListComponent,
+    UserComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
@@ -68,7 +73,7 @@ import { sideNavReducer, selectedNameReducer } from './reducers';
   exports: [
     MatButtonModule,
   ],
-  providers: [],
+  providers: [UsersStore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
