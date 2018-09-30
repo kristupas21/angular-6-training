@@ -20,31 +20,3 @@
     font-weight: 500;
   }
 }
-
-// sass-lint:disable no-important
-.mat-sort-header-stem {
-  background: none;
-  display: none !important;
-}
-.mat-sort-header-pointer-left,
-.mat-sort-header-pointer-right {
-  display: none !important;
-}
-
-.mat-sort-header-pointer-middle {
-  background: none !important;
-  transform: none !important;
-  width: 0px;
-  height: 0px;
-  border-left: 6px solid transparent;
-  border-top: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid currentColor;
-  bottom: 3px;
-}
-
-.mat-sort-header-indicator {
-
-}
-
-//sass-lint:enable no-important

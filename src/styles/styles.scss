@@ -19,6 +19,14 @@ button,
   font-size: 13px;
 }
 
+input {
+  transition: border .6s ease;
+
+  &:focus {
+    outline: none;
+  }
+}
+
 .icon {
   display: inline-block;
   opacity: 1;
@@ -42,4 +50,13 @@ button,
   position: fixed;
   right: 15px;
   width: 140px;
+}
+
+app-login {
+  @include flex-container();
+  box-sizing: border-box;
+  height: 100vh;
+  min-height: 600px;
+  min-width: 1024px;
+  width: 100%;
 }

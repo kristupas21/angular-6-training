@@ -28,6 +28,7 @@
     "@datorama/akita": "^1.9.6",
     "@ngrx/store": "6.1.0",
     "core-js": "2.5.7",
+    "lodash": "^4.17.10",
     "rxjs": "6.2.2",
     "svg-sprite": "1.4.0",
     "zone.js": "0.8.26"

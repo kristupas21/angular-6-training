@@ -1,28 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@app-interfaces/app-state';
 import { Name } from '@app-interfaces/names';
 import { Names } from '@app-data/names';
-import { ToggleSidenav, SelectUser } from '@app-actions';
+import { SelectUser } from '@app-actions';
+import { SideNavService } from '@app-services/sidenav.service';
+import { LocalStorageService } from '@app-services/local-storage.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-dashboard-container',
   templateUrl: './dashboard-container.component.html',
 })
-export class DashboardContainerComponent implements OnInit {
-  names: Name[] = Names;
-  selectedName: Name = Names[0];
+export class DashboardContainerComponent {
+  public  names: Name[] = Names;
 
-  constructor(private store: Store<AppState>) { }
-
-  ngOnInit() {
-  }
-
-  toggleSideNav(): void {
-    this.store.dispatch(new ToggleSidenav);
-  }
+  constructor(
+    private _store: Store<AppState>,
+    private _sideNavService: SideNavService,
+    private _localStorageService: LocalStorageService,
+    private _router: Router
+  ) {}
 
   onChange(value: string) {
-    this.store.dispatch(new SelectUser(value));
+    this._store.dispatch(new SelectUser(value));
+  }
+
+  toggleSideNav() {
+    this._sideNavService.toggleState();
+  }
+
+ clearStorage(): void {
+    this._localStorageService.deleteUser();
+    this._router.navigate(['login']);
   }
 }

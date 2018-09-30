@@ -10,10 +10,22 @@ app-nav-container {
 .mat-drawer {
   background-color: $color-primary;
   height: 100%;
-  min-width: 200px;
   overflow-y: hidden !important;
   position: fixed;
   width: 200px;
+}
+
+mat-sidenav-content {
+  transition: margin-left .6s ease;
+}
+
+mat-sidenav-container {
+  &.sideNav--small {
+
+    mat-sidenav-content {
+      margin-left: 46px !important;
+    }
+  }
 }
 
 // sass-lint:enable no-important
@@ -22,6 +34,30 @@ app-nav-container {
 }
 
 [app-nav-link] {
+  //@include flex-container($justify: flex-start);
+  //background: transparent;
+  //color: $grey-ea;
+  //cursor: pointer;
+  //font-size: 13px;
+  //font-weight: 500;
+  //height: 50px;
+  //line-height: 50px;
+  //padding-left: 8px;
+  //transition: background .2s ease-in-out;
+
+
+
+  //&[ng-reflect-is-selected=true],
+  //&.active {
+  //  background: $green-medium;
+  //}
+  //
+  //&.active {
+  //  border-left: 2px solid $white;
+  //}
+}
+
+.nav-link {
   @include flex-container($justify: flex-start);
   background: transparent;
   color: $grey-ea;
@@ -37,20 +73,24 @@ app-nav-container {
     outline: none;
   }
 
-  &[ng-reflect-is-selected=true],
-  &[ng-reflect-is-active=true] {
+  &[ng-reflect-is-selected=true] {
     background: $green-medium;
   }
 
-  &[ng-reflect-is-active=true] {
+  &--active {
+    background: $green-medium;
     border-left: 2px solid $white;
   }
-}
-
-.nav-link {
 
   &__text {
+    //animation: appear .3s linear .3s 1 forwards;
     margin-left: 16px;
     min-width: 120px;
+    //opacity: 0;
   }
 }
+
+//@keyframes appear {
+//  from { opacity: 0; }
+//  to { opacity: 1; }
+//}

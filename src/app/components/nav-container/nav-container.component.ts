@@ -1,19 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Store, select } from '@ngrx/store';
-import { AppState } from '@app-interfaces/app-state';
+import { Component, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { SideNavService } from '@app-services/sidenav.service';
 
 @Component({
   selector: 'app-nav-container',
   templateUrl: './nav-container.component.html',
 })
-export class NavContainerComponent implements OnInit {
-  sidenavOpen: Observable<boolean>;
+export class NavContainerComponent implements OnDestroy {
+  public  sideNavOpen = true;
+  private subscription: Subscription;
 
-  constructor(private store: Store<AppState>) {
-    this.sidenavOpen = store.pipe(select('sideNavOpened'));
+  constructor(private sideNavService: SideNavService) {
+    this.subscription =
+      this.sideNavService
+        .getState()
+        .subscribe(state => this.sideNavOpen = state);
   }
 
-  ngOnInit() {
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

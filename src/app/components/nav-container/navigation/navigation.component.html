@@ -1,7 +1,7 @@
 <ul class="navigation">
   <li
-    class="nav-link"
     app-nav-link
+    class="nav-link"
     *ngFor="let link of navigationLinks"
     [name]="link.name | titlecase"
     (mouseenter)="onMouseEnter(link.name)"
@@ -9,8 +9,9 @@
     [isSelected]="link.name === selectedLink"
     [isActive]="link.path === activeLink"
     [icon]="link.icon"
-    routerLink="{{link.path}}"
-    routerLinkActive="active"
+    [isSmall]="small"
+    [routerLink]="[{ outlets: { menu: [link.path]}}]"
+    routerLinkActive="nav-link--active"
     >
   </li>
 </ul>

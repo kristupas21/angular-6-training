@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 /* External */
 // Modules
 import { StoreModule } from '@ngrx/store';
-import { MatButtonModule, MatSelectModule, MatSidenavModule, MatTableModule, MatSortModule } from '@angular/material';
+import { MatButtonModule, MatSelectModule, MatSidenavModule, MatTableModule, MatSortModule, MatCardModule } from '@angular/material';
 import { MatIconModule } from '@angular/material/icon';
 // Components
 
@@ -30,6 +30,7 @@ import { FilterSetupComponent } from './components/display-container/filter-setu
 import { ProjectListComponent } from './components/display-container/projects/project-list/project-list.component';
 // Reducers
 import { sideNavReducer, selectedNameReducer } from './reducers';
+
 import { UserComponent } from './components/user/user.component';
 import { CommonModule } from '@angular/common';
 import { UsersStore } from './akita/user.store';
@@ -52,6 +53,7 @@ import { UsersStore } from './akita/user.store';
     FilterSetupComponent,
     ProjectListComponent,
     UserComponent
+
   ],
   imports: [
     CommonModule,
@@ -65,13 +67,14 @@ import { UsersStore } from './akita/user.store';
     MatIconModule,
     MatTableModule,
     MatSortModule,
+    MatCardModule,
     StoreModule.forRoot({
       sideNavOpened: sideNavReducer,
       selectedUser: selectedNameReducer
     })
   ],
   exports: [
-    MatButtonModule,
+    MatButtonModule
   ],
   providers: [UsersStore],
   bootstrap: [AppComponent]

@@ -1,0 +1,83 @@
+@import '~src/styles/base/variables';
+@import '~src/styles/base/mixins';
+
+.login-form {
+  &__form {
+    position: relative;
+  }
+
+  &__title {
+    color: $grey-6b;
+    font-size: 18px;
+    font-weight: 300;
+    margin: 20px 0;
+    width: 233px;
+  }
+
+  &__controls {
+    @include flex-container();
+    margin-top: 30px;
+  }
+
+  &__field {
+    @include flex-container($justify: flex-start);
+    margin: 5px 0;
+  }
+
+  &__label,
+  &__input {
+    color: $grey-6b;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  &__label {
+    min-width: 70px;
+    padding-right: 12px;
+    text-align: right;
+  }
+
+  &__input {
+    border: solid 1px $grey-e1;
+    border-radius: 2px;
+    box-sizing: border-box;
+    height: 28px;
+    padding-left: 6px;
+    width: 180px;
+
+    &::placeholder {
+      color: $grey-a53;
+    }
+  }
+
+  &__alert {
+    color: $color-error;
+    font-size: 12px;
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: -12px;
+    width: 100%;
+
+    &--top {
+      top: -20px;
+    }
+
+    &--bottom {
+      top: -10px;
+    }
+  }
+}
+
+.ng-valid[required],
+.ng-valid.required  {
+  border: 1px solid $color-primary;
+}
+
+.ng-invalid.ng-dirty,
+.ng-invalid.ng-touched {
+  &:not(form) {
+    border: 1px solid $color-error;
+  }
+}

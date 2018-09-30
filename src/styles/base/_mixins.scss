@@ -5,3 +5,34 @@
   flex-wrap: $wrap;
   justify-content: $justify;
 }
+
+@mixin positioned-absolute($top: 0, $left: 0, $bottom: auto, $right: auto, $translate-x: false, $translate-y: false) {
+  position: absolute;
+
+  @if ($bottom == auto) {
+    top: $top;
+  } @else {
+    bottom: $bottom;
+  }
+  @if ($right == auto) {
+    left: $left;
+  } @else {
+    right: $right;
+  }
+
+  @if ($translate-x == true and $right == auto) {
+    transform: translateX(-$left);
+  }
+
+  @if ($translate-x == true and $left == auto) {
+    transform: translateX($right);
+  }
+
+  @if ($translate-y == true and $bottom == auto) {
+    transform: translateY(-$top);
+  }
+
+  @if ($translate-y == true and $top == auto) {
+    transform: translateY($bottom);
+  }
+}
