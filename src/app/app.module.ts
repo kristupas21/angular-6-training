@@ -23,6 +23,8 @@ import { sideNavReducer, selectedNameReducer } from './reducers';
 import { UserComponent } from './components/user/user.component';
 import { CommonModule } from '@angular/common';
 import { UsersStore } from './akita/user.store';
+import { ProjectsComp } from './components/projects/projects.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -31,14 +33,15 @@ import { UsersStore } from './akita/user.store';
     IconNotificationComponent,
     IconUserComponent,
     IconChevronRightComponent,
-    UserComponent
-
+    UserComponent,
+    ProjectsComp
   ],
   imports: [
     CommonModule,
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule,
     MatSelectModule,
     MatSidenavModule,
